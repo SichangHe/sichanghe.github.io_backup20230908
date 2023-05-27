@@ -1,4 +1,4 @@
-<html lang="en">
+<html lang="en" class="no-js light">
 
 <head>
     <meta charset="UTF-8">
@@ -8,9 +8,34 @@
     <link rel="stylesheet" href="notes/css/variables.css">
     <link rel="stylesheet" href="notes/css/general.css">
     <link rel="stylesheet" href="notes/css/chrome.css">
+    <!-- Fonts -->
+    <link rel="stylesheet" href="notes/FontAwesome/css/font-awesome.css">
+    <link rel="stylesheet" href="notes/fonts/fonts.css">
 </head>
 
 <body>
+    <script type="text/javascript">
+        var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+
+        // Work around some values being stored in localStorage wrapped in quotes
+        try {
+            var theme = localStorage.getItem('mdbook-theme');
+
+            if (theme.startsWith('"') && theme.endsWith('"')) {
+                localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+            }
+        } catch (e) { }
+
+        // Set the theme before any content is loaded, prevents flash
+        var theme;
+        try {theme = localStorage.getItem('mdbook-theme');} catch (e) { }
+        if (theme === null || theme === undefined) {theme = default_theme;}
+        var html = document.querySelector('html');
+        html.classList.remove('no-js')
+        html.classList.remove('light')
+        html.classList.add(theme);
+        html.classList.add('js');
+    </script>
     <div id="page-wrapper" class="page-wrapper">
         <div class="page">
             <div id="menu-bar-hover-placeholder"></div>
@@ -29,7 +54,7 @@
                         </li>
                     </ul>
                 </div>
-                <h1 class="menu-title">Steven&#x27;s Notes</h1>
+                <h1 class="menu-title">Steven&#x27;s Home Page</h1>
                 <div class="right-buttons">
                     <a href="https://github.com/SichangHe" title="GitHub" aria-label="GitHub">
                         <i id="git-repository-button" class="fa fa-github"></i>
@@ -48,4 +73,5 @@
         </div>
     </div>
     </div>
+    <script src="notes/book.js" type="text/javascript" charset="utf-8"></script>
 </body>
