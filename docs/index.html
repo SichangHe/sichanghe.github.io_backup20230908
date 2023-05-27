@@ -4,10 +4,48 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Steven Hé (Sīchàng)'s Home Page</title>
+    <link rel="icon" href="notes/favicon.svg">
+    <link rel="stylesheet" href="notes/css/variables.css">
+    <link rel="stylesheet" href="notes/css/general.css">
+    <link rel="stylesheet" href="notes/css/chrome.css">
 </head>
 
 <body>
-    <p>Place holder.</p>
+    <div id="page-wrapper" class="page-wrapper">
+        <div class="page">
+            <div id="menu-bar-hover-placeholder"></div>
+            <div id="menu-bar" class="sticky menu-bar bordered">
+                <div class="left-buttons">
+                    <button id="theme-toggle" class="icon-button" type="button" title="Change theme"
+                        aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                        <i class="fa fa-paint-brush"></i>
+                    </button>
+                    <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                        <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                        <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                        <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                        <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                        <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button>
+                        </li>
+                    </ul>
+                </div>
+                <h1 class="menu-title">Steven&#x27;s Notes</h1>
+                <div class="right-buttons">
+                    <a href="https://github.com/SichangHe" title="GitHub" aria-label="GitHub">
+                        <i id="git-repository-button" class="fa fa-github"></i>
+                    </a>
+                </div>
+            </div>
+            <p>
+            <ul>
+                <li><a href="https://github.com/SichangHe">Steven Hé (Sīchàng)'s GitHub</a></li>
+                <li><a href="curriculum_vitae/">Steven Hé (Sīchàng)'s Curriculum Vitae</a></li>
+                <li><a href="https://sichanghe.wordpress.com">Steven Hé (Sīchàng)'s Blog</a></li>
+                <li><a href="notes">Steven Hé (Sīchàng)'s Notes</a></li>
+            </ul>
+            </p>
+            </main>
+        </div>
+    </div>
+    </div>
 </body>
-
-</html>
