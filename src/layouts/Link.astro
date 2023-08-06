@@ -1,0 +1,11 @@
+---
+const { href, title, aria_label } = Astro.props;
+---
+
+<a
+    target="_blank"
+    rel="noopener noreferrer nofollow"
+    href={href}
+    title={title}
+    aria-label={aria_label}><slot /></a
+>

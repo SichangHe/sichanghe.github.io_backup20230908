@@ -1,0 +1,44 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Link from "../layouts/Link.astro";
+import LangTable from "../layouts/LangTable.astro";
+
+const links = [
+    ["GitHub", "https://github.com/SichangHe"],
+    ["Curriculum Vitae", "https://sichanghe.github.io/curriculum_vitae/"],
+    ["YouTube channel", "https://www.youtube.com/@sichanghe"],
+    ["Blog", "https://sichanghe.wordpress.com"],
+    ["Notes", "https://sichanghe.github.io/notes"],
+];
+---
+
+<BaseLayout>
+    <div
+        style="display: flex; flex-direction: row; justify-items: space-between;"
+    >
+        <div>
+            <h1>Steven Hé (Sīchàng)</h1>
+            <p>
+                Systems programmer, invested Rustacean, Pythonista, Polyglot
+                programmer.
+            </p>
+        </div>
+        <img
+            height="180"
+            alt="Steven Hé (Sīchàng)'s avatar"
+            src="https://sichanghe.github.io/notes/favicon.svg"
+        />
+    </div>
+    <LangTable />
+    <p>
+        <ul>
+            {
+                links.map(([name, href]) => (
+                    <li>
+                        <Link href={href}>Steven Hé (Sīchàng)'s {name}</Link>
+                    </li>
+                ))
+            }
+        </ul>
+    </p>
+</BaseLayout>

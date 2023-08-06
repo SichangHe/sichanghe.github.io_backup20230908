@@ -1,0 +1,87 @@
+---
+import MenuBar from "./MenuBar.astro";
+---
+
+<html lang="en" class="no-js light">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta
+            name="keywords"
+            content="Steven He, StevenHe, Sichang He, SichangHe, StevenSichangHe, 何思畅, 何思暢"
+        />
+        <title>Steven Hé (Sīchàng)'s Home Page</title>
+        <link rel="icon" href="https://sichanghe.github.io/notes/favicon.svg" />
+        <link
+            rel="stylesheet"
+            href="https://sichanghe.github.io/notes/css/variables.css"
+        />
+        <link
+            rel="stylesheet"
+            href="https://sichanghe.github.io/notes/css/general.css"
+        />
+        <link
+            rel="stylesheet"
+            href="https://sichanghe.github.io/notes/css/chrome.css"
+        />
+        <!-- Fonts -->
+        <link
+            rel="stylesheet"
+            href="https://sichanghe.github.io/notes/FontAwesome/css/font-awesome.css"
+        />
+        <link
+            rel="stylesheet"
+            href="https://sichanghe.github.io/notes/fonts/fonts.css"
+        />
+    </head>
+
+    <body>
+        <script type="text/javascript">
+            var default_theme = window.matchMedia(
+                "(prefers-color-scheme: dark)"
+            ).matches
+                ? "navy"
+                : "light";
+
+            // Work around some values being stored in localStorage wrapped in quotes
+            try {
+                var theme = localStorage.getItem("mdbook-theme");
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem(
+                        "mdbook-theme",
+                        theme.slice(1, theme.length - 1)
+                    );
+                }
+            } catch (e) {}
+
+            // Set the theme before any content is loaded, prevents flash
+            var theme;
+            try {
+                theme = localStorage.getItem("mdbook-theme");
+            } catch (e) {}
+            if (theme === null || theme === undefined) {
+                theme = default_theme;
+            }
+            var html = document.querySelector("html");
+            html.classList.remove("no-js");
+            html.classList.remove("light");
+            html.classList.add(theme);
+            html.classList.add("js");
+        </script>
+        <div id="page-wrapper" class="page-wrapper">
+            <div class="page">
+                <div id="menu-bar-hover-placeholder"></div>
+                <MenuBar />
+                <div id="content" class="content">
+                    <main>
+                        <slot>Content.</slot>
+                    </main>
+                </div>
+            </div>
+        </div>
+        <script>
+            import "../js/main.js";
+        </script>
+    </body>
+</html>

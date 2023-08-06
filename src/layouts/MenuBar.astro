@@ -1,0 +1,45 @@
+---
+import Link from "./Link.astro";
+---
+
+<div id="menu-bar" class="sticky menu-bar bordered">
+    <div class="left-buttons">
+        <button
+            id="theme-toggle"
+            class="icon-button"
+            type="button"
+            title="Change theme"
+            aria-label="Change theme"
+            aria-haspopup="true"
+            aria-expanded="false"
+            aria-controls="theme-list"
+        >
+            <i class="fa fa-paint-brush"></i>
+        </button>
+        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+            {
+                ["Light", "Rust", "Coal", "Navy", "Ayu"].map((name) => (
+                    <li role="none">
+                        <button
+                            role="menuitem"
+                            class="theme"
+                            id={name.toLowerCase()}
+                        >
+                            {name}
+                        </button>
+                    </li>
+                ))
+            }
+        </ul>
+    </div>
+    <h1 class="menu-title">Steven Hé (Sīchàng)&#x27;s Home Page</h1>
+    <div class="right-buttons">
+        <Link
+            href="https://github.com/SichangHe"
+            title="GitHub"
+            aria_label="GitHub"
+        >
+            <i id="git-repository-button" class="fa fa-github"></i>
+        </Link>
+    </div>
+</div>

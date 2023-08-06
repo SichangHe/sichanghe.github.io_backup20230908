@@ -1,0 +1,7 @@
+**.astro/
+**env
+**env.*
+**.log*
+**dist/
+**lock*
+**node_modules/
