@@ -5,8 +5,11 @@ import LangTable from "../layouts/LangTable.astro";
 import DontClick from "../layouts/DontClick.astro";
 
 const links = [
+    [
+        "Unofficial Curriculum Vitae",
+        "https://sichanghe.github.io/curriculum_vitae/",
+    ],
     ["GitHub", "https://github.com/SichangHe"],
-    ["Curriculum Vitae", "https://sichanghe.github.io/curriculum_vitae/"],
     ["YouTube channel", "https://www.youtube.com/@sichanghe"],
     ["Blog", "https://sichanghe.wordpress.com"],
     ["Notes", "https://sichanghe.github.io/notes"],
@@ -32,6 +35,7 @@ const links = [
     </div>
     <LangTable />
     <p>
+        <h2>Link farm</h2>
         <ul>
             {
                 links.map(([name, href]) => (
